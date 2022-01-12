@@ -1,0 +1,23 @@
+{
+  "name": "base_structure",
+  "version": "1.0.0",
+  "description": "base structure for project",
+  "main": "index.js",
+  "scripts": {
+    "sasstocss": "node-sass ./sass/main.scss ./css/main.css --watch"
+  },
+  "author": "nmt607",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.6.1",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "popper.js": "^1.16.1",
+    "wowjs": "^1.1.3"
+  }
+}
