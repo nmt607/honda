@@ -1,0 +1,40 @@
+%background-contain {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%background-cover {
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+%scroll-bar-style {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}
+
+%button-primary-hover{
+    background-color: transparent;
+    color: $color-primary;
+    border-color: $color-primary;
+}
+

@@ -1,0 +1,61 @@
+//VENDOR
+// BOOTSTRAP
+
+// BOOTSTRAP FUNCTION - OPTION B
+// @import './vendors/bootstrap/bootstrap-function';
+
+// BOOTSTRAP-CUSTOMIZE REQUIRED FOR BOTH OPTIONS
+@import './vendors/bootstrap/extensions/bootstrap-customize';
+
+// BOOTSTRAP ALL REQUIRED - OPTION A
+@import "./vendors/bootstrap/bootstrap-all";
+
+// BOOTSTRAP REQUIRED - OPTION B
+// @import './vendors/bootstrap/bootstrap-stylesheets';
+
+// BOOTSTRAP COMPONENTS OPTIONAL - OPTION B
+// @import "./vendors/bootstrap/bootstrap-components";
+
+// ANIMATE-CSS
+@import './vendors/animate.css/animate-css';
+@import './vendors/animate.css/extensions/animate-css-customize';
+
+// HOVER-CSS
+@import './vendors/hover-css/hover-css';
+
+// NORMALIZE
+@import './vendors/normalize/normalize';
+
+// ABSTRACTS
+@import "abstracts/variable";
+@import 'abstracts/mixin';
+@import 'abstracts/function';
+@import "abstracts/extend";
+
+// BASE
+@import "base/base";
+@import "base/font";
+@import "base/typography";
+@import "base/animations";
+
+
+// COMPONENTS
+@import 'components/button';
+
+// LAYOUT
+//HEADER
+@import 'layout/header/header';
+@import 'layout/header/vehicles-section';
+@import 'layout/header/discover-section';
+@import 'layout/header/shopping-tools-section';
+@import 'layout/header/search-section';
+//FOOTER
+@import './layout/footer';
+// BACK TO TOP
+@import './layout/back-to-top.scss';
+
+// PAGES
+@import './pages/home/carousel-overview-section';
+@import './pages/home/intro-section';
+@import './pages/home/our-vehicles-section';
+@import './pages/home/discover-section';

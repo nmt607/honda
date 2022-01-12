@@ -1,0 +1,14 @@
+.fadeScaleIn-discovers-section {
+    @include fadeScale("show", 85%, -28px);
+}
+.faceScaleOut-discovers-section {
+    @include fadeScale("hide", 85%, -28px);
+}
+
+.fadeScaleIn-search-section {
+    @include fadeScale("show", calc(100% - 33px), -28px);
+}
+
+.faceScaleOut-search-section {
+    @include fadeScale("hide", calc(100% - 33px), -28px);
+}

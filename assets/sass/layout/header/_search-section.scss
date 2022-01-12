@@ -1,0 +1,91 @@
+.nav-search {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    left: 0;
+    background-color: $color-gray;
+    box-shadow: $box-shadow-2;
+    cursor: default;
+    &__container {
+        padding: 10px 5%;
+    }
+    &__form {
+        display: flex;
+        align-items: center;
+        color: $color-primary;
+        &-icon {
+            @include textStyle($color-primary, 3.2rem, null);
+            padding: 5px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        &-input {
+            @include textStyle($color-primary, 2.4rem, $font-weight-semi-bold);
+            flex: 1;
+            padding: 4px 16px;
+            margin: 0 24px;
+            background-color: transparent;
+            &::placeholder {
+                @include textStyle($color-dark-gray, 2.4rem, normal);
+            }
+        }
+        &-btn {
+            text-transform: uppercase;
+            padding: 7px 28px;
+        }
+    }
+}
+//RESPONSIVE
+// BETWEEN-SIZES RESPONSIVE
+
+// MIN-WIDTH RESPONSIVE
+
+// MAX-WIDTH RESPONSIVE
+@include responLessThan("ml") {
+    .nav-search-mobile {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        margin: 0 26px;
+        top: 0;
+        box-shadow: none;
+        .nav-search-mobile__content {
+            @include search-bar();
+            width: 550px;
+            padding: 20px 0;
+        }
+        .nav-search-mobile__content-icon {
+            top: 15px;
+            left: 16px;
+            font-size: 1rem;
+        }
+        .nav-search-mobile__content-input {
+            margin: 0;            
+        }
+        .nav-search-mobile__content-btn {
+            padding: 9px 16px 9px 8px;
+            top: 3px;
+        }
+        @-moz-document url-prefix() {
+            .nav-search-mobile__content-btn {
+                padding: 9px 16px 9px 10px;
+            }
+        }
+    }
+}
+@include responLessThan("ms") {
+    .nav-search-mobile {
+        .nav-search-mobile__content-icon {
+            display: none;
+        }
+        .nav-search-mobile__content-input {
+            padding-right: 68px;
+            padding-left: 8px;
+        }
+        .nav-search-mobile__content-btn {
+            font-size: 1.4rem;
+            padding: 10px 6px;
+        }       
+    }
+}

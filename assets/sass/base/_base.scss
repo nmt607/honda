@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {    
+    font-size: 62.5%;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    // overflow-x: hidden;
+    color: black;
+    background-color: $color-gray;
+}
+
+#main {
+    background-color: $color-gray;
+    user-select: none;
+}
+
+// TAG
+label {
+    margin: 0;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    outline: none;  
+    box-shadow: none !important;
+    border-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+li,
+a,
+i,
+span {
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: unset;
+}
+
+//CLASS
+
+// SECTION
+.section--title {
+    @include textStyle($color-secondary, 6rem, $font-weight-light);
+    text-align: center;
+    line-height: 6rem;
+    padding: 55px 0 25px;
+    @include responLessThan("md") {
+        font-size: 4rem;
+    }
+}
+.section--content {
+    margin-right: 5%;
+    margin-left: 5%;
+    @include responLessThan("lg") {
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+}
+// SPACING
+.margin--offset {
+    margin-right: $grid-gutter-width * -1/2;
+    margin-left: $grid-gutter-width * -1/2;
+}
+.p--col {
+    padding: 6px;
+}
+
+// DISPLAY
+.show {
+    display: block !important;
+}
+.hide {
+    display: none !important;
+}
+.hide-on-tablet {   
+    animation-name: slideOutRight;
+}
+
+//OVERFLOW
+.none-scroll {
+    &::-webkit-scrollbar {
+        display: none;
+    }   
+    scrollbar-width: none;    
+    overflow-x: hidden;
+    overflow-y: auto;    
+}
+
+// ANIMATION
+.animation-off {
+    animation-duration: 0s !important;
+    transition: none !important;
+}

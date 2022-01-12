@@ -1,0 +1,303 @@
+.vehicles-products {
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    left: 0;
+    line-height: $lh-default;
+    z-index: 10;
+    cursor: default;
+
+    &__overlay {
+        background-color: rgba($color-secondary, 0.2);
+        position: fixed;
+        top: $header-height;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        margin: 0 10%;
+    }
+    &__navbar {
+        position: relative;
+        z-index: 2;
+        &-nav {
+            display: flex;
+            justify-content: center;
+            line-height: 1.4;
+            border-bottom: 1px solid #dedede;
+            background-color: $color-gray;
+            &-item {
+                position: relative;
+                display: block;
+                &:not(:last-child)::before {
+                    content: "";
+                    display: block;
+                    width: 1.5px;
+                    height: 18px;
+                    background-color: #dedede;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+                &:hover::after {
+                    content: "";
+                    display: block;
+                    width: 95%;
+                    height: 4px;
+                    background-color: $color-primary;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                &--active {
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 95%;
+                        height: 4px;
+                        background-color: $color-primary;
+                        position: absolute;
+                        bottom: -2px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    .header__vehicles__title-link {
+                        color: $color-primary;
+                    }
+                }
+            }
+            &-item:hover &-link {
+                color: $color-primary;
+            }
+            &-link {
+                @include textStyle($color-secondary, null, 600);
+                padding: 18px 30px;
+            }
+        }
+    }
+    &__list {
+        @extend %scroll-bar-style;
+        position: relative;
+        z-index: 1;
+        max-height: 100vh;
+        padding: 50px 50px 100px;
+        background-color: $color-gray;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    &__title {
+        position: relative;
+        text-align: center;
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #dcdcdc;
+            position: absolute;
+            top: 50%;
+            transform: translatey(-50%);
+            z-index: 1;
+        }
+        &-content {
+            @include textStyle($color-secondary, 2.4rem, null);
+            position: relative;
+            background-color: $color-gray;
+            padding: 0 5px;
+            z-index: 2;
+        }
+        &-icon {
+            font-size: 1.2rem;
+            transform: translateY(-3px);
+        }
+    }
+    &__row-container {
+        margin-bottom: 50px;
+    }
+    &__card {
+        background-color: $color-white;
+        border-radius: 5px;
+        margin-top: 30px;
+        &-top-img {
+            @extend %background-contain;
+            display: block;
+            padding-top: 42%;
+            border-radius: 5px;
+        }
+        &-body {
+            color: $color-secondary;
+            padding: 8px 16px;
+            & > * {
+                margin-bottom: 14px;
+            }
+        }
+        &-title {
+            @include textStyle(null, 2.4rem, 700);
+            text-align: center;
+            text-transform: none;
+        }
+        &-detail {
+            display: flex;
+            justify-content: space-around;
+            &__item {
+                margin-bottom: 12px;
+            }
+        }
+        &-price {
+            $font-size: 2.4rem;
+            @include textStyle(null, $font-size, $font-weight-semi-bold);
+            line-height: $font-size;
+            letter-spacing: 2px;
+        }
+        &-action {
+            display: flex;
+            justify-content: space-around;
+            &__item {                
+                padding: 4px 24px;                
+            }
+        }
+    }
+}
+
+.vehicles-products {
+    // BETWEEN-SIZES RESPONSIVE
+
+    // MIN-WIDTH RESPONSIVE
+
+    // MAX-WIDTH RESPONSIVE
+    @include responLessThan("xl") {
+        .vehicles-products__body {
+            margin: 0;
+        }
+    }
+    @include responLessThan("ml") {
+        background: $color-gray;
+        height: 100vh;
+
+        .vehicles-products__body {
+            margin: 0;
+            height: 100%;
+        }
+
+        // vehicles-products__navbar-nav
+        .vehicles-products__navbar-nav {
+            flex-direction: column;
+            justify-content: flex-start;
+            border: none;
+        }
+        .vehicles-products__navbar-nav-item {
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+        .vehicles-products__navbar-nav-link {
+            display: flex;
+            padding: 12px 0;
+            margin: 0 26px;
+            text-transform: none;
+            border-bottom: $border-5;
+        }
+        .vehicles-products__navbar-nav-stock {
+            margin-left: 10px;
+        }
+        .navbar-subnav-title {
+            @include sub-navbar-title();
+        }
+
+        // vehicles-products__list
+        .vehicles-products__list {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            overflow: hidden;
+            z-index: 3;
+        }
+        .vehicles-products__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: $color-white;
+            box-shadow: $box-shadow-2;
+            &:after {
+                display: none;
+            }
+        }
+        .vehicles-products__row-container {
+            @include scroll-style();
+            overflow-y: scroll;
+            height: 100vh;
+            margin: 0;
+            padding-bottom: 120px;
+        }
+        .vehicles-products__title-content {
+            flex: 1;          
+            padding: 15px 0;
+            position: relative;
+            background-color: transparent;
+        }
+        .vehicles-products__title-icon-back {
+            position: absolute;
+            left: 16px;
+            color: #00324f;
+            font-size: 1.4rem;
+            font-weight: 600;           
+            padding-right: 50px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .vehicles-products__card-action__item {
+            min-width: 110px;
+        }
+    }
+    @include responLessThan("lg") {
+        .vehicles-products__card-action__item {
+            min-width: 95px;
+        }
+        .vehicles-products__card-action__item {
+            padding: 0;
+        }
+    }
+    @include responLessThan("md") {        
+        .vehicles-products__card-action {
+            flex-direction: column;
+        }
+        .vehicles-products__card-action__item {
+            min-width: 110px;
+            &:first-child {
+                margin-bottom: 8px;
+            }
+        }
+    }
+    @include responLessThan("sm") {
+      .vehicles-products__card {
+          margin-right: -10px;
+          margin-left: -10px;
+      }
+      .vehicles-products__card-body {
+          padding: 5px;
+      }
+      .vehicles-products__card-title{
+          font-size: 1.8rem;
+      }
+      .vehicles-products__card-detail__item{
+        font-size: 1.4rem;
+      }
+      .vehicles-products__card-price{
+          font-size: 1.6rem;
+      }
+    }
+}
+
+

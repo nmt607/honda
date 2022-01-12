@@ -1,0 +1,444 @@
+.our-vehicles {
+    &-title {
+        margin-top: -2.6%;
+    }
+
+    &-carousel {
+        &__indicators {
+            position: relative;
+            justify-content: space-between;
+            z-index: 2;
+            margin-bottom: 20px;
+            margin-right: 10%;
+            margin-left: 10%;
+            &-item[data-target] {
+                @include textStyle($color-secondary, 1.6rem, $font-weight-bold);
+                text-indent: unset;
+                box-sizing: inherit;
+                background-color: transparent;
+                position: relative;
+                width: unset;
+                height: unset;
+                border: none;
+                border-radius: 50px;
+                padding: 6px 9px;
+                opacity: 1;
+                &:hover {
+                    color: $color-white;
+                    background-color: $color-primary;
+                }
+                &::before {
+                    @include arrowDown(calc(100% + 20px), 50%, $color-gray);
+                    transform: translateX(50%);
+                    opacity: 0;
+                    transition: opacity 0.6s ease-in-out;
+                }
+                &.active {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &__inner-bgimg {
+            min-height: 550px;
+            object-fit: cover;
+            object-position: center;
+        }
+        &__caption {
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            right: unset;
+            left: unset;
+            height: 100%;
+            width: 50%;
+            padding-top: 20px;
+            padding-bottom: 0;
+
+            &__top {
+                padding: 20px 66px;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            &-stock {
+                @include textStyle($color-white, 1.6rem, $font-weight-bold);
+            }
+            &-label {
+                transform: translateX(-15px);
+            }
+            &-desc {
+                margin-bottom: 20px;
+                @include textStyle($color-white, 1.6rem, $font-weight-light);
+            }
+            &-details {
+                display: flex;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+            &-price,
+            &-rate {
+                @include textStyle($color-white, 4rem, $font-weight-light);
+            }
+            &-starting,
+            &-tech {
+                @include textStyle($color-white, 1.4rem, $font-weight-semi-bold);
+                text-shadow: 0 1px 5px #000;
+            }
+            &-btn {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 40px;
+            }
+            &-btn-right,
+            &-btn-left {
+                padding: 6px 28px;
+            }
+            &-btn-left {
+                transform: translateX(-14px);
+            }
+
+            &__footer {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 0 10px;
+                border-top: $border-4;
+                &-img {
+                    width: 50%;
+                }
+            }
+            &-read-more {
+                @include textStyle($color-white, 1.4rem, $font-weight-bold);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__control {
+            @include carousel-control();
+            width: 5%;
+            top: 56px;
+        }
+    }
+
+    &-service {
+        margin-top: 100px;
+        &__item {
+            display: block;
+            height: 300px;
+            padding: 50px 20px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: $color-white;
+            box-shadow: $box-shadow-2;
+            transition: transform ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: $box-shadow-1;
+            }
+        }
+        &__item:hover &__btn {
+            @extend %button-primary-hover;
+        }
+        &__icon {
+            @include textStyle($color-secondary, 4rem, null);
+            margin-bottom: 14px;
+        }
+        &__title {
+            @include textStyle($color-secondary, 1.8rem, $font-weight-bold);
+        }
+        &__detail {
+            @include textStyle($color-secondary, 1.6rem, $font-weight-light);
+            min-height: 90px;
+        }
+        &__btn {
+            padding: 6px 28px;
+        }
+        //modifier p--col
+        .p--col:first-child {
+            padding-left: $grid-gutter-width/2;
+        }
+        .p--col:last-child {
+            padding-right: $grid-gutter-width/2;
+        }
+    }
+
+    &-tech {
+        margin-top: 100px;
+        &__overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &__overlay:hover + &__content &__btn {
+            @extend %button-primary-hover;
+        }
+        &__item {
+            display: flex;
+            position: relative;
+            height: 370px;
+        }
+        &__content {
+            padding: 0 50px;
+            margin: auto auto 0;
+            text-align: center;
+        }
+        &__btn {
+            padding: 6px 28px;
+        }
+
+        &__certified {
+            background-image: url("../img/our-vehicle-certified.jpg");
+            @extend %background-cover;
+            &-btn {
+                margin-bottom: 15px;
+            }
+            &-condition {
+                @include textStyle($color-white, 1.5rem, $font-weight-light);
+                &-link {
+                    position: relative;
+                    color: $color-primary;
+                    z-index: 2;
+                    &:hover {
+                        color: $color-secondary;
+                    }
+                }
+            }
+        }
+
+        &__guides {
+            background-image: url("../img/our-vehicle-guide.jpg");
+            @extend %background-cover;
+            background-position: unset;
+            &-desc {
+                margin-bottom: 20px;
+                &-title {
+                    @include textStyle($color-white, 2rem, $font-weight-semi-bold);
+                    margin-bottom: 10px;
+                }
+                &-detail {
+                    @include textStyle($color-white, 1.5rem, $font-weight-light);
+                }
+            }
+            &-btn {
+                margin-bottom: 38px;
+            }
+        }
+    }
+}
+
+// RESPONSIVE
+
+// MAX-WIDTH RESPONSIVE
+@include responLessThan("ml") {
+    .our-vehicles {
+        .our-vehicles-carousel__indicators {
+            margin-right: 5%;
+            margin-left: 5%;
+        }
+    }
+}
+@include responLessThan("lg") {
+    .our-vehicles {
+        .our-vehicles-title {
+            margin-top: 0;
+            padding-top: 105px;
+        }
+        .our-vehicles-carousel__indicators-item[data-target] {
+            font-size: 1.4rem;
+            font-weight: $font-weight-semi-bold;
+        }
+        .our-vehicles-carousel__caption__top {
+            padding: 0 30px;
+        }
+        .our-vehicles-carousel__inner-bgimg {
+            min-height: 400px;
+        }
+        .our-vehicles-carousel__caption-desc {
+            margin-bottom: 10px;
+        }
+        .our-vehicles-carousel__caption-price,
+        .our-vehicles-carousel__caption-rate {
+            font-size: 3rem;
+        }
+        .our-vehicles-carousel__caption-btn {
+            margin-top: 20px;
+        }       
+        .our-vehicles-service__detail {
+            display: none;
+        }
+        .our-vehicles-service__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 250px;
+        }
+        .our-vehicles-service__btn {
+            margin: auto;
+        }
+        .our-vehicles-service__title {
+            min-height: 60px;           
+        }
+    }
+}
+@include responLessThan("md") {
+    .our-vehicles {
+        .our-vehicles-title {
+            padding-top: 55px;
+        }
+        .our-vehicles-carousel__inner-bgimg {
+            height: 530px;
+            object-position: top;
+        }
+        .our-vehicles-carousel__indicators {
+            display: flex;
+            max-width: 150%;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            margin-right: 30px;
+            margin-left: 30px;
+            scrollbar-width: none;
+            padding: 2px 0;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        .our-vehicles-carousel__indicators-item {
+            flex-shrink: 0;
+            margin-left: 0;
+            &::before {
+                display: none;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            &.active,
+            &:hover {
+                color: $color-primary;
+                background-color: transparent;
+                border-radius: unset;
+                border-bottom: 3px solid $color-primary;
+            }
+        }
+        .our-vehicles-carousel__indicators-control {
+            position: absolute;
+            background: transparent;
+            font-size: 2rem;
+            color: $color-secondary;
+            top: 5px;
+            cursor: pointer;
+            i {
+                position: relative;
+                z-index: 6;
+            }
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0px;
+                width: 40px;
+                height: 30px;
+                background: $color-gray;
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: blur(5px);
+                z-index: 5;
+            }
+            &-next {
+                text-align: right;
+                right: 2px;
+                &:after {
+                    right: 0;
+                }
+            }
+            &-prev {
+                left: 2px;
+            }
+        }
+        .our-vehicles-carousel__caption {
+            height: 55%;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            top: unset;
+            bottom: 0;
+        }
+        .our-vehicles-carousel__caption-label {
+            text-align: center;
+        }
+        .our-vehicles-carousel__caption-label-img {
+            width: 40%;
+        }
+        .our-vehicles-carousel__caption-desc {
+            font-size: 1.4rem;
+        }
+        .our-vehicles-carousel__caption__top {
+            width: 90%;
+        }
+        .our-vehicles-carousel__caption-price,
+        .our-vehicles-carousel__caption-rate {
+            font-size: 2rem;
+            font-weight: $font-weight-semi-bold;
+        }
+        .our-vehicles-carousel__caption-starting,
+        .our-vehicles-carousel__caption-tech {
+            font-size: 1.4rem;
+        }
+        .our-vehicles-carousel__caption__footer {
+            width: 100%;
+            padding: 8px 0;
+        }
+        .our-vehicles-carousel__caption__footer-img {
+            display: none;
+        }
+        //modifier p--col
+        .p--col:first-child {
+            padding-left: 6px;
+        }
+        .p--col:last-child {
+            padding-right: 6px;
+        }
+        .our-vehicles-tech__item {
+            margin-bottom: 15px;
+        }        
+    }
+}
+@include responLessThan("sm") {
+    .our-vehicles {
+        .our-vehicles-carousel__caption__top {
+            width: 90%;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .our-vehicles-carousel__caption-label-img {
+            width: 60%;
+        }
+        .our-vehicles-carousel__caption-btn {
+            margin-top: 0px;
+        }
+        .our-vehicles-carousel__control {
+            font-size: 2.5rem;
+        }
+        
+    }
+}
+@include responLessThan("ms") {
+    .our-vehicles-service__title {
+        font-size: 1.4rem;
+    }
+    .our-vehicles-tech__content {
+        padding: 0;
+    }
+}

@@ -1,0 +1,58 @@
+// push background and hover for header__vehicles__card-top
+@for $no from 1 through 12 {
+    $bg-hover-color: transparent;
+    @if ($no > 3) {
+        $no-img: $no % 3;
+        @if ($no-img == 1) {
+            $bg-hover-color: #bbbdc0;
+        } @else if ($no-img == 2) {
+            $bg-hover-color: #5d2430;
+        } @else {
+            $no-img: $no-img + 1;
+            $bg-hover-color: #14409a;
+        }
+        .vehicles-products__card-top-img--#{$no} {
+            background-image: url("../img/vehicles-section-#{$no-img}.png");
+            @extend %background-contain;
+        }
+        .vehicles-products__card:hover .vehicles-products__card-top-img--#{$no} {
+            background-image: url("../img/vehicles-section-hover-#{$no-img}.png"),
+                linear-gradient(#{$bg-hover-color}, #f5f5f5, #f5f5f5);
+            @extend %background-contain;
+        }
+    } @else {
+        @if ($no == 1) {
+            $bg-hover-color: #bbbdc0;
+        } @else if ($no == 2) {
+            $bg-hover-color: #5d2430;
+        } @else {
+            $bg-hover-color: #14409a;
+        }
+        .vehicles-products__card-top-img--#{$no} {
+            background-image: url("../img/vehicles-section-#{$no}.png");
+            @extend %background-contain;
+        }
+        .vehicles-products__card:hover .vehicles-products__card-top-img--#{$no} {
+            background-image: url("../img/vehicles-section-hover-#{$no}.png"),
+                linear-gradient(#{$bg-hover-color}, #f5f5f5, #f5f5f5);
+            @extend %background-contain;
+        }
+    }
+}
+
+// push background and hover for discover-card
+@for $no from 1 through 6 {
+    .discover-card--#{$no} {
+        background-image: url("../img/discover-#{$no}.jpg");
+        @extend %background-contain;
+        background-position: top !important;
+    }
+}
+
+// Create animation-delay class
+@for $i from 1 through 100 { 
+        .delay-#{$i} {
+            // $delay: $i * 0.15;
+            animation-delay: #{$i * 0.075}s;
+        }
+}

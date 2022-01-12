@@ -1,0 +1,103 @@
+.carousel-overview {
+    position: relative;
+    margin-top: $header-height;
+
+    &__indicators {
+        justify-content: flex-start;
+        margin: 0;
+        margin-left: 20px;
+        z-index: 1;
+        &-item[data-target] {
+            margin: 0 5px;
+            background-color: $color-secondary;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            &.active {
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    &__caption {
+        padding-bottom: 0;
+        z-index: 1;
+        &-title {
+            text-shadow: 0 1px 5px $color-black;
+            font-size: 2.4rem;
+            font-weight: $font-weight-semi-bold;
+            margin-bottom: 12px;
+        }
+        &-btn {
+            min-width: 110px;
+            margin-bottom: 30px;
+        }
+        &-desc {
+            text-shadow: 0 1px 5px $color-black;
+            font-size: 1.2rem;
+        }
+    }
+
+    &__control {
+        @include carousel-control();
+    }
+}
+
+// RESPONSIVE
+@include responLessThan("lg") {
+    .carousel-overview {
+        .carousel-overview__item {
+            height: 330px;
+        }
+        .carousel-overview__img {
+            img {
+                height: 100%; 
+                min-width: 100%;     
+                object-fit: cover;
+            }
+        }
+        .carousel-overview__caption {
+            bottom: 8px;
+        }
+        .carousel-overview__caption-title {
+            font-size: 1.8rem;
+        }
+        .carousel-overview__caption-btn {
+            min-width: 250px;
+            margin-bottom: 10px;
+            padding: 3px 28px;
+        }
+    }
+}
+@include responLessThan("md") {
+    .carousel-overview {
+        .carousel-overview__caption-btn {
+            min-width: 50%;
+        }
+    }
+}
+@include responLessThan("sm") {
+    .carousel-overview {
+        .carousel-caption {
+            right: 5%;
+            left: 5%;
+        }
+        .carousel-overview__control {
+            font-size: 2.5rem;
+        }
+        .carousel-overview__caption-desc {
+            padding: 0 20%;
+        }
+    }
+}
+@include responLessThan("sm") {
+    .carousel-overview {
+        .carousel-overview__caption-title {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+        .carousel-overview__caption-btn {
+            margin-bottom: 5px;
+        }
+    }
+}
