@@ -1,3 +1,4 @@
+import { screenML,screenMD,scrollWidth } from '../../../base/variables.js'
 // Option carousel setting
 $('#ourVehiclesCarousel').carousel({
     wrap: true,
@@ -20,3 +21,8 @@ const controlPrev = $('.our-vehicles-carousel__indicators-control-prev')
 controlPrev.click(function(){
     ourVehicleCarouselIndicator.animate({'scrollLeft': '-=130px'}, 100)
 })
+
+if (window.innerWidth > screenML) {
+    document.querySelector('.our-vehicles-tech__guides--js').classList.add('animate__fadeInRight')
+    document.querySelector('.our-vehicles-tech__certified--js').classList.add('animate__fadeInLeft')
+}

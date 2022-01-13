@@ -24,6 +24,7 @@
         }
         &-right {
             display: flex;
+            position: relative;
             &-container {
                 display: flex;
             }
@@ -53,6 +54,21 @@
                 letter-spacing: 0;
                 padding: 2px 10px;
                 margin-right: 10px;
+            }
+        }
+        &-indicator {
+            @include textStyle(#8099a7, 1.2rem, null);
+            position: absolute;
+            bottom: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            &-item {
+                padding: 5px;
+                margin-left: 5px;
+                cursor: pointer;
+                &--active {
+                    color: $color-primary;
+                }
             }
         }
     }
@@ -134,7 +150,7 @@
             padding: 24px 30px 32px;
         }
         .intro__top-item {
-            position: relative;        
+            position: relative;
         }
         .intro__top-left-title {
             font-size: 4rem;
@@ -157,7 +173,7 @@
         }
     }
     @include responLessThan("lg") {
-        .intro {           
+        .intro {
             .intro__top-right-detail {
                 flex: unset;
             }
@@ -188,18 +204,18 @@
     @include responLessThan("md") {
         .intro {
             margin-bottom: 0;
-            .intro__top {                
-                padding: 24px 0px 0px;                          
+            .intro__top {
+                padding: 24px 0px 0px;
             }
             .intro__top-left-title {
                 font-size: 3.2rem;
             }
-            .intro__top-right-container {  
-                max-width: 100%;                         
-                padding-bottom: 10px;
+            .intro__top-right-container {
+                max-width: 100%;
+                padding-bottom: 8px;
                 overflow-x: scroll;
-                overflow-y: hidden;
-            }            
+                overflow-y: hidden;                
+            }
             .intro__top-right-container {
                 img {
                     max-width: 100%;
@@ -208,20 +224,20 @@
             .intro__top-right {
                 flex-shrink: 0;
                 margin: 16px 24px;
-                width: 400px;      
-                height: fit-content;         
-                box-shadow: 0px 5px 10px 0 #000 ;
+                width: 400px;
+                height: fit-content;
+                box-shadow: 0px 5px 10px 0 #000;
             }
             .intro__top-right-desc {
                 margin-bottom: 5px;
             }
             .intro__top-right-action {
                 position: unset;
-                transform: unset;                               
-            }         
+                transform: unset;
+            }
             .intro__bottom {
                 display: none;
-            }   
+            }
         }
-    }       
+    }
 }

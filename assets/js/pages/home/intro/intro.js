@@ -8,3 +8,8 @@ if (window.innerWidth <= screenMD) {
         item.classList.remove('wow')
     })
 }
+
+if (window.innerWidth > screenML) {
+    document.querySelector('.intro__bottom--right--js').classList.add('animate__fadeInRight')
+    document.querySelector('.intro__bottom--left--js').classList.add('animate__fadeInLeft')
+}
