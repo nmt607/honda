@@ -16199,11 +16199,11 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow-x: hidden;
   color: black;
   background-color: #f5f5f5; }
 
 #main {
+  overflow-x: hidden;
   background-color: #f5f5f5;
   user-select: none; }
 

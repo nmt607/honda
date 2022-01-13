@@ -12,13 +12,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    overflow-x: hidden;
+body {   
     color: black;
     background-color: $color-gray;
 }
 
 #main {
+    overflow-x: hidden;
     background-color: $color-gray;
     user-select: none;
 }
