@@ -7,7 +7,7 @@ if ((window.innerWidth) <= screenML) {
     inputField.focusin(function () {       
         if (window.innerWidth <= screenSM + 0.02) {
             setTimeout(function () {
-                navBarList.scrollTo({ top: 330 });
+                navBarList.scrollTo({ top: 168 });
             }, 0)
         }      
     })      
