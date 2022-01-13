@@ -18102,7 +18102,9 @@ a:hover {
   .our-vehicles-service__title {
     font-size: 1.4rem; }
   .our-vehicles-tech__content {
-    padding: 0; } }
+    padding: 0; }
+  .footer-contact__search-icon {
+    top: 17px; } }
 
 .discover {
   padding-bottom: 165px; }
