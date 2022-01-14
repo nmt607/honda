@@ -1,0 +1,14 @@
+{
+  "name": "honda_landingpage",
+  "version": "1.0.0",
+  "description": "honda nmt607",
+  "main": "index.js",
+  "scripts": {
+    "sasstocss":"node-sass ./assets/sass/main.scss ./assets/css/main.scss -w"
+  },
+  "author": "nmt607",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

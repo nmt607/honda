@@ -23,7 +23,7 @@ import {} from './pages/home/intro/intro.js'
 
 // carousel-our-vehicle
 import {} from './pages/home/our-vehicles/carousel-our-vehicles.js'
-
+    
 // discover
 import {} from './pages/home/discover/discover.js'
 
@@ -32,7 +32,7 @@ import {} from './pages/home/discover/discover.js'
 // carousel bootstrap control
 import {
     hideOrShowCarouselControl
-} from './vendor/bootstrap/bootstrap-carousel.js'
+} from './vendor/bootstrap/extensions/bootstrap-carousel.js ';
 hideOrShowCarouselControl('#carouselOverview')
 hideOrShowCarouselControl('#ourVehiclesCarousel')
 
