@@ -4,11 +4,19 @@
   "description": "honda nmt607",
   "main": "index.js",
   "scripts": {
-    "sasstocss":"node-sass ./assets/sass/main.scss ./assets/css/main.scss -w"
+    "sasstocss": "node-sass ./assets/sass/main.scss ./assets/css/main.scss -w"
   },
   "author": "nmt607",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "bootstrap": "4.6",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "wow.js": "^1.2.2"
   }
 }
